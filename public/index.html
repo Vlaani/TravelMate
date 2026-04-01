@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelMate - Поиск туров</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1>TravelMate</h1>
+        <p>Удобный поиск туров и отелей под ваш бюджет</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="search-panel">
+        <h2>Поиск тура</h2>
+        <form id="tour-search-form" class="search-form">
+          <label>
+            Город вылета
+            <input type="text" name="departureCity" placeholder="Москва" required />
+          </label>
+
+          <label>
+            Страна назначения
+            <select name="destinationCountry" required>
+              <option value="">Выберите страну</option>
+              <option value="Турция">Турция</option>
+              <option value="Египет">Египет</option>
+              <option value="Греция">Греция</option>
+              <option value="Испания">Испания</option>
+            </select>
+          </label>
+
+          <label>
+            Дата вылета (с)
+            <input type="date" name="departureDateFrom" required />
+          </label>
+
+          <label>
+            Дата вылета (по)
+            <input type="date" name="departureDateTo" required />
+          </label>
+
+          <label>
+            Ночей
+            <input type="number" name="nights" min="1" value="7" required />
+          </label>
+
+          <label>
+            Туристов
+            <input type="number" name="tourists" min="1" value="2" required />
+          </label>
+
+          <label>
+            Бюджет (USD)
+            <input type="number" name="budget" min="1" value="1500" required />
+          </label>
+
+          <label>
+            Минимум звёзд (покажем отели не ниже выбранного уровня)
+            <select name="stars" required>
+              <option value="1">1 и выше</option>
+              <option value="2">2 и выше</option>
+              <option value="3" selected>3 и выше</option>
+              <option value="4">4 и выше</option>
+              <option value="5">только 5</option>
+            </select>
+          </label>
+
+          <button type="submit">Найти отели</button>
+        </form>
+      </section>
+
+      <section class="results-panel">
+        <div class="results-head">
+          <h2>Результаты</h2>
+          <span id="results-count">Пока нет данных</span>
+        </div>
+        <div id="status-message" class="status-message"></div>
+        <div id="results" class="results-grid"></div>
+      </section>
+    </main>
+<footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2026 TravelMate. Все права защищены.</p>
+          <div class="footer-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
