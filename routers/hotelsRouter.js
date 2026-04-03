@@ -65,5 +65,5 @@ router.post("/search", (req, res) => {
   });
 });
 
-module.exports = hotelsRouter;
+module.exports = router;
 
