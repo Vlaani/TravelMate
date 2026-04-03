@@ -43,9 +43,9 @@ function renderHotels(hotels) {
             <h3>${escapeHtml(hotel.hotelName)}</h3>
             <div class="hotel-meta">
               <div class="stars">${starIcons} (${hotel.stars})</div>
-              <span><strong>Цена:</strong> ${formatPrice(hotel.price)}</span>
-              <span><strong>Локация:</strong> ${escapeHtml(hotel.location)}</span>
-              <span><strong>Дата вылета:</strong> ${escapeHtml(hotel.departureDate)}</span>
+              <div><strong>Цена:</strong> ${formatPrice(hotel.price)}</div>
+              <div><strong>Локация:</strong> ${escapeHtml(hotel.location)}</div>
+              <div><strong>Дата вылета:</strong> ${escapeHtml(hotel.departureDate)}</div>
             </div>
             <p class="hotel-info">${escapeHtml(hotel.hotelInfo)}</p>
           </div>
@@ -87,7 +87,7 @@ form.addEventListener("submit", async (event) => {
     }
 
     resultsCount.textContent = `Найдено: ${data.totalFound}`;
-    statusMessage.textContent = "Готово.";
+    statusMessage.textContent = "";
     renderHotels(data.hotels);
   } catch (error) {
     resultsCount.textContent = "Ошибка";
